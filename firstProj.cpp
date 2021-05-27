@@ -127,8 +127,8 @@ int main()
    using namespace std;
 
    cout << "Enter persons age: " << endl;
-
-   cin >> age;
+   cin >> age;\
+   //cin gets user input
 //for if statements we have to go from increase to decrease or else its
 //not going to work and its going to grab the first one its related to 
 //and ignore everything else that it was suppose to go through
