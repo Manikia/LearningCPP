@@ -21,6 +21,7 @@ void Insert(int n)
 	//so instead of doing the above to check if its empty before we insert at beginning we can do the below since it takes into consideration inserting if its empty
 	temp -> next = head;
 	head = temp;
+	
 }
 
 void Print()
