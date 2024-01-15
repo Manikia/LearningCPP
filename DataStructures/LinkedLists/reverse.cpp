@@ -17,11 +17,10 @@ struct Node* Reverse(struct Node* head)
 
 	while(current != NULL)
 	{
-		next = current -> next;
-		current -> next = prev;
-		//these last two lines in the loop is redirecting the pointers
-		prev = current;
-		current = next;
+		next = current->next;   // Save the next node
+        current->next = prev;   // Reverse the link
+        prev = current;         // Move prev to the current node
+        current = next;         // Move current to the next node
 	}
 	head = prev;
 	return head;
