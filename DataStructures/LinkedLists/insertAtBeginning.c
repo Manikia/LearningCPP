@@ -11,6 +11,7 @@ struct Node* head;
 void Insert(int x)
 {
 	struct Node* temp = (struct Node*)malloc(sizeof(x));
+	
 	temp -> data = x;
 	
 	//if we are inserting to a node that isnt empty then we have to do the below

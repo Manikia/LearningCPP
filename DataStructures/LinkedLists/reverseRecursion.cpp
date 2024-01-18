@@ -29,13 +29,14 @@ void beforePrint(struct Node* node)
 {
 	printf("Before reverse: ");
 	//need the while next bc then it will be stuck on first node
-	while(node -> next != NULL)
+	while(node!= NULL)
 	{
 		printf("%d ", node -> data);
 		node = node -> next;
 		//printf("%d", temp1 -> data);
 	}
-	printf("%d ", node -> data); //adding this because I want it to print on the node it stopped on which caused it to break
+	printf("\n"); //adding this because I want it to print on the node it stopped on which caused it to break
+	return;
 }
 
 void ReversePrint(struct Node* p)
@@ -67,7 +68,7 @@ int main()
 	head = Insert(head, 5);
 
 	beforePrint(head);
-	
+
 	printf("\nAfter reverse: ");
 	ReversePrint(head);
 }
