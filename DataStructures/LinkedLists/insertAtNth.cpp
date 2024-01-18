@@ -9,31 +9,30 @@ struct Node
 
 struct Node* head;
 
-void Insert(int data, int n)
+void Insert(int data, int position)
 {
-	Node* temp1 = new Node();
-	temp1 -> data = data;
-	temp1 -> next = NULL;
+	Node* temp = new Node();
+	temp -> data = data;
+	temp -> next = NULL;
 	
-	if(n == 1)
+	if(position == 1)
 	{
-//if there is just one node then it will add the new node at the beginning as default
-		temp1 -> next = head;
-		head = temp1;
+		temp -> next = head; //makes current node as new head node of LL
+		head = temp;// This line updates the head pointer to point to the newly inserted node (temp).
 		return;
 	}
 
-	Node* temp2 = head;
+	Node* temp1 = head;
     //using n-2 lets you stop a node before the node you want so you can reassign it to the next node and be able to connect them all
-	for (int i = 0; i < n-2; i++)
+	for (int i = 0; i < position-2; i++)
 	{
 //we are looping to the next position which in this case would be two after the head
-		temp2 = temp2 -> next;
+		temp1 = temp1 -> next;
         //makes a new fake head so we can see where we are at and create a new insertion
 	}
     // once we are in our desired node we can reattach it
-	temp1 -> next = temp2 -> next; //this is pointing to the n-1 node 
-	temp2 -> next = temp1;
+	temp -> next = temp1 -> next; //this is pointing to the n-1 node 
+	temp1 -> next = temp;
 }
 void Print()
 {
