@@ -8,6 +8,7 @@ struct Node
 	//this is w c++: Node* next;
 };
 struct Node* head;
+
 void Insert(int x)
 {
 	struct Node* temp = (struct Node*)malloc(sizeof(x));
@@ -38,17 +39,9 @@ void Print()
 }
 int main()
 {
-	head = NULL; //empty list
-	printf("How many numbers to create a list?");
-	int n, i, x;
+	Insert(4);
+	Insert(2);
+	Insert(6);
 
-	scanf("%d", &n);
-	for(i = 0; i < n; i++)
-	{
-		printf("Enter a number \n");
-		scanf("%d", &x);
-		
-		Insert(x);
-		Print();
-	}
+	Print();
 }
