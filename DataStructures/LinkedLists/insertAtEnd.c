@@ -9,32 +9,41 @@ struct Node{
 
 struct Node* head;
 
-//insert at beginning
-void Insert(int x)
+//insert at end
+void InsertAtEnd(int x)
 {
-	struct Node* temp = (struct Node*)malloc(sizeof(x)); //creating new node
+	struct Node* temp = (struct Node*)malloc(sizeof(x)); // creating a new node
 
-	//giving the temp node as the value of x
-	temp -> data = x;
-	temp -> next = head; //setting new node to be head
-	head = temp; //setting the temp to be new head
+	temp->data = x;
+	temp->next = NULL; // the new node is currently the last node, so set its next to NULL
+
+	if (head == NULL) {
+		// if the list is empty, make the new node the head
+		head = temp;
+	} else {
+		// traverse to the last node
+		struct Node* last = head;
+		while (last->next != NULL) {
+			last = last->next;
+		}
+		// update the next pointer of the last node to point to the new node
+		last->next = temp;
+	}
+
 }
 
 void Print()
 {
 
-	while(head != NULL) //looping until the end
-	{
-		printf("%d", head ->data); //printing what the list has
-		head = head -> next;//moving temp to next one to print
-	}
-	return;
 }
+
+	
+
 int main()
 { 
-	Insert(4);
-	Insert(2);
-	Insert(6);
+	InsertAtEnd(4);
+	InsertAtEnd(2);
+	InsertAtEnd(6);
 
 	Print();
 }
