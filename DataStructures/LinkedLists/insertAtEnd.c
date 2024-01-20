@@ -14,23 +14,25 @@ void InsertAtEnd(int x)
 {
 	struct Node* temp = (struct Node*)malloc(sizeof(x)); // creating a new node
 
-	temp->data = x;
-	temp->next = NULL; // the new node is currently the last node, so set its next to NULL
+	temp -> data = x;
+	temp -> next = NULL; //we are setting the next node to be empty
 
-	if (head == NULL) {
-		// if the list is empty, make the new node the head
+	//create a statement incase its empty and then an else if it isnt
+	if(head == NULL)
+	{
 		head = temp;
-	} else {
+	}
+	else{
 		// traverse to the last node
-		struct Node* last = head;
-		while (last->next != NULL) {
-			last = last->next;
+		struct Node* head2 = head;
+		while (head2->next != NULL){
+			head2 = head2->next; //we do this so we can move to the next node everytime but if we do head2->next=head2 then it will only traverse and not move
 		}
 		// update the next pointer of the last node to point to the new node
-		last->next = temp;
+		head2->next = temp;
 	}
-
 }
+
 
 void Print()
 {
