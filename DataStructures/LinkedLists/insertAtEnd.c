@@ -26,7 +26,7 @@ void InsertAtEnd(int x)
 		// traverse to the last node
 		struct Node* head2 = head;
 		while (head2->next != NULL){
-			head2 = head2->next; //we do this so we can move to the next node everytime but if we do head2->next=head2 then it will only traverse and not move
+			head2 = head2->next; //we do this so we can move to the next node everytime but if we do head2->next=head2 then it will create an infitite loop
 		}
 		// update the next pointer of the last node to point to the new node
 		head2->next = temp;

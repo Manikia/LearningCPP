@@ -38,3 +38,8 @@ _just learning c++_
 - ![](./images/for.png)
 - the image above says for each elem do nums
 - ![](./images/immidiate.png)
+- functions pass parameters and return values and such but clases do not and instead are for creating blueprints and encapsulating data 
+- if we use an & next to a type then it means its a reference
+    - The & symbol, when used in a declaration, creates a reference to a variable.A reference is essentially an alias or an alternative name for an existing variable.It allows you to manipulate the original variable through the reference
+- member functions are functions that are associated with a specific class or object. They are functions declared within the body of a class and operate on the data members (attributes) of that class. Member functions are also referred to as methods in the context of object-oriented programming
+- 

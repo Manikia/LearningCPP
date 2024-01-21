@@ -56,6 +56,7 @@ void InsertAtTail(int x)
     // Traverse to the last node
     struct Node* last = head;
     while (last->next != NULL) {
+        //gets the very last node
         last = last->next;
     }
 
