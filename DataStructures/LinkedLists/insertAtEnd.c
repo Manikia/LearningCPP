@@ -12,34 +12,40 @@ struct Node* head;
 //insert at end
 void InsertAtEnd(int x)
 {
-	struct Node* temp = (struct Node*)malloc(sizeof(x)); // creating a new node
+	//have to create new node to equal to null bc its at the end
+	struct Node* temp = (struct Node*)malloc(sizeof(x));
 
-	temp -> data = x;
-	temp -> next = NULL; //we are setting the next node to be empty
+	temp -> data =x;
+	temp -> next = NULL; //null for now while w iterate to add at end
+	//create a statement if the list is empty and if not then we have to traverse through it and when it breaks, then add the new node at the endw the temp node
 
-	//create a statement incase its empty and then an else if it isnt
+	//check if the ll is null
 	if(head == NULL)
 	{
 		head = temp;
 	}
-	else{
-		// traverse to the last node
+	else
+	{
 		struct Node* head2 = head;
-		while (head2->next != NULL){
-			head2 = head2->next; //we do this so we can move to the next node everytime but if we do head2->next=head2 then it will create an infitite loop
+		//checks if the next node is null if not then it will move forward to going to next node
+		while(head2 -> next != NULL)
+		{
+			head2 = head2 -> next;
 		}
-		// update the next pointer of the last node to point to the new node
-		head2->next = temp;
+		//once it sees that the next node is empty/null it will initialize it to the temp
+		head2 -> next = temp;
 	}
 }
 
-
 void Print()
 {
-
+	//we do head != null so it breaks when it is null and not before so we can get all the nodes
+	while(head != NULL)
+	{
+		printf("%d ", head -> data);
+		head = head -> next;
+	}
 }
-
-	
 
 int main()
 { 
